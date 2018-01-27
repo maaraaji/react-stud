@@ -2,6 +2,55 @@
   text-align: center;
 }
 
+.colorBrown {
+  color: brown;
+}
+
+.fontBold {
+  font-weight: bold;
+}
+
+.App button {
+  background-color: #c35800;
+  font-family: 'arial';
+  font-weight: bold;
+  color: white;
+  border: 1px solid #96541e;
+  padding: 10px;
+  box-shadow: 2px 2px 5px #eee;
+}
+
+.App button:hover {
+  background-color: salmon;
+  color: black;
+}
+
+.App button.showPersons {
+  background-color: #076565;
+  color: white;
+  border: none;
+}
+
+.App button.showPersons:hover {
+  background-color: #28c8c8;
+  color: black;
+  border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;

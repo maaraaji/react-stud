@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import Styles from './App.css';
 
 import Person from './components/js/Person';
 
@@ -15,7 +15,12 @@ class App extends Component {
   }
 
   deletePersonHandler = (index) => {
-
+    // const persons = this.state.persons.slice();  //One way of populating the array with different array values instead of pointers
+    const persons = [...this.state.persons];        //Recommended way of populating the array with the different array content using spread operators
+    persons.splice(index, 1);
+    this.setState({
+      persons: persons
+    })
   }
 
   showPersonsHandler = () => {
@@ -24,9 +29,26 @@ class App extends Component {
     })
   }
 
+  changeNameHandler = (event, id) => {
+    const personIndex = this.state.persons.findIndex( p => {
+      return p.id === id
+    })
+    const person = {...this.state.persons[personIndex]};  //Inside State, get the specific object from the persons array pertaining to the personIndex
+    person.name = event.target.value;                     //assign the event target value to the name object inside person[personIndex]
+
+    const persons = [...this.state.persons]               //Get the persons array using spread operator
+    persons[personIndex] = person                         //map the person constant value to persons array pertaining to the personIndex
+
+    this.setState({
+      persons : persons
+    })
+  }
+
   render() {
 
     let persons = null;
+    const classes = []
+    let buttonClass = '';
 
     if (this.state.showPersons){
       persons = (
@@ -36,19 +58,30 @@ class App extends Component {
               personName={person.name}
               personAge={person.age}
               key={person.id}
+              click={() => this.deletePersonHandler (index)}
+              changeName={(event) => this.changeNameHandler (event, person.id)}
               />
           })}
         </div>
       )
+
+      buttonClass = Styles.showPersons
+    }
+
+    if (this.state.persons.length <=2) {
+      classes.push(Styles.colorBrown);
+    }
+    if (this.state.persons.length <=1) {
+      classes.push(Styles.fontBold);
     }
 
     return (
-      <div className="App">
+      <div className={Styles.App}>
         <h1>
           ReactJS Study Guide - The descriptions are enclosed in source codes
         </h1>
-        <p>Checking Dynamic Classes</p>
-        <button onClick={this.showPersonsHandler}>SHOW NAME CARD</button>
+        <p className={classes.join(' ')}>Checking Dynamic Classes</p>
+        <button className={buttonClass} onClick={this.showPersonsHandler}>SHOW NAME CARD</button>
         {persons}
       </div>
     );
