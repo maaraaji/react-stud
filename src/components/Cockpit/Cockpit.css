@@ -6,7 +6,7 @@
   font-weight: bold;
 }
 
-.Cockpit button {
+.Button {
   background-color: #c35800;
   font-family: 'arial';
   font-weight: bold;
@@ -16,18 +16,18 @@
   box-shadow: 2px 2px 5px #eee;
 }
 
-.Cockpit button:hover {
+.Button:hover {
   background-color: salmon;
   color: black;
 }
 
-.Cockpit button.showPersons {
+.Button.showPersons {
   background-color: #076565;
   color: white;
   border: none;
 }
 
-.Cockpit button.showPersons:hover {
+.Button.showPersons:hover {
   background-color: #28c8c8;
   color: black;
   border: none;
