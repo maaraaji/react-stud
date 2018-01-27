@@ -34,17 +34,17 @@ class Persons extends Component {
   }
 
   shouldComponentUpdate (nextProps, nextState) {
-    console.log(' [Update Persons.js] Inside shouldComponentUpdate()', nextProps);
+    console.log(' [Update Persons.js] Inside shouldComponentUpdate()', nextProps, nextState);
     return nextProps !== this.props;
     // return false;
   }
 
   componentWillUpdate (nextProps, nextState) {
-    console.log(' [Update Persons.js] Inside componentWillUpdate()', nextProps);
+    console.log(' [Update Persons.js] Inside componentWillUpdate()', nextProps, nextState);
   }
 
   componentDidUpdate () {
-    console.log(' [Update Persons.js] Inside componentDidUpdate()', this.props);
+    console.log(' [Update Persons.js] Inside componentDidUpdate()', this.props, this.state);
   }
 
   render () {
