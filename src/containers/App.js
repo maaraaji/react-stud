@@ -27,6 +27,20 @@ class App extends Component {
     console.log('[Create App.js] Inside componentDidMount()');
   }
 
+  shouldComponentUpdate (nextProps, nextState) {
+    console.log(' [Update App.js] Inside shouldComponentUpdate()', nextProps, nextState);
+    return nextState !== this.state;
+    // return false;
+  }
+
+  componentWillUpdate (nextProps, nextState) {
+    console.log(' [Update App.js] Inside componentWillUpdate()', nextProps, nextState);
+  }
+
+  componentDidUpdate () {
+    console.log(' [Update App.js] Inside componentDidUpdate()', this.props, this.state);
+  }
+
   // state = {                                         //state can be used inside class where we extend react component and it cannot be used inside functions
   //   persons : [
   //     {id: 'asd1', name: 'Cheran', age: '30'},      //id is needed to act as a key while using map function
