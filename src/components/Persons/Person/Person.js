@@ -23,6 +23,9 @@ class Person extends Component {
 
   componentDidMount () {
     console.log('[Create Per.js] Inside componentDidMount()');
+    if (this.props.pos === 1){
+      this.inpElement.focus();          //References are only available on stateful components
+    }
   }
 
   componentWillUnmount () {
@@ -33,7 +36,11 @@ class Person extends Component {
     console.log('[Create Per.js] Inside render()');
     return <WithClass styleClass={Styles.Person}>
       <p onClick={this.props.click}>I am {this.props.personName} and I am {this.props.personAge} years old</p>
-      <input type='text' onChange={this.props.changeName} value={this.props.personName}/>
+      <input
+        ref = { (inp) => { this.inpElement = inp }}
+        type='text'
+        onChange={this.props.changeName}
+        value={this.props.personName}/>
     </WithClass>
   }
 }

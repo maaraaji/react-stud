@@ -50,6 +50,7 @@ class Persons extends Component {
   render () {
     console.log('[Create Persons.js] Inside render()');
     return this.props.persons.map( (p, index) => <Person
+        pos={index}
         personName={p.name}
         personAge={p.age}
         key={p.id}
