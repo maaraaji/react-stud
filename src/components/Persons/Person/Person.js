@@ -2,7 +2,30 @@ import React, { Component } from 'react';
 import Styles from './Person.css';
 
 class Person extends Component {
+
+  constructor (props) {
+    super(props);
+    this.state = {                                         //state can be used inside class where we extend react component and it cannot be used inside functions
+      persons : [
+        {id: 'asd1', name: 'Cheran', age: '30'},      //id is needed to act as a key while using map function
+        {id: 'qwe1', name: 'Cholan', age: '28'},
+        {id: 'zxc1', name: 'Pandiyan', age: '26'},
+      ],
+      showPersons: true
+    }
+    console.log('[Per.js] Inside constructor()');
+  }
+
+  componentWillMount () {
+    console.log('[Per.js] Inside componentWillMount()');
+  }
+
+  componentDidMount () {
+    console.log('[Per.js] Inside componentDidMount()');
+  }
+
   render () {
+    console.log('[Per.js] Inside render()');
     return <div
       className={Styles.Person}>
       <p onClick={this.props.click}>I am {this.props.personName} and I am {this.props.personAge} years old</p>

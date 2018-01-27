@@ -3,7 +3,30 @@ import React, { Component } from 'react';
 import Person from './Person/Person';
 
 class Persons extends Component {
+
+  constructor (props) {
+    super(props);
+    this.state = {                                         //state can be used inside class where we extend react component and it cannot be used inside functions
+      persons : [
+        {id: 'asd1', name: 'Cheran', age: '30'},      //id is needed to act as a key while using map function
+        {id: 'qwe1', name: 'Cholan', age: '28'},
+        {id: 'zxc1', name: 'Pandiyan', age: '26'},
+      ],
+      showPersons: true
+    }
+    console.log('[Persons.js] Inside constructor()');
+  }
+
+  componentWillMount () {
+    console.log('[Persons.js] Inside componentWillMount()');
+  }
+
+  componentDidMount () {
+    console.log('[Persons.js] Inside componentDidMount()');
+  }
+
   render () {
+    console.log('[Persons.js] Inside render()');
     return this.props.persons.map( (p, index) => <Person
         personName={p.name}
         personAge={p.age}

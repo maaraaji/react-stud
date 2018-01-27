@@ -6,14 +6,35 @@ import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
 
-  state = {                                         //state can be used inside class where we extend react component and it cannot be used inside functions
-    persons : [
-      {id: 'asd1', name: 'Cheran', age: '30'},      //id is needed to act as a key while using map function
-      {id: 'qwe1', name: 'Cholan', age: '28'},
-      {id: 'zxc1', name: 'Pandiyan', age: '26'},
-    ],
-    showPersons: true
+  constructor (props) {
+    super(props);
+    this.state = {                                         //state can be used inside class where we extend react component and it cannot be used inside functions
+      persons : [
+        {id: 'asd1', name: 'Cheran', age: '30'},      //id is needed to act as a key while using map function
+        {id: 'qwe1', name: 'Cholan', age: '28'},
+        {id: 'zxc1', name: 'Pandiyan', age: '26'},
+      ],
+      showPersons: true
+    }
+    console.log('[App.js] Inside constructor()');
   }
+
+  componentWillMount () {
+    console.log('[App.js] Inside componentWillMount()');
+  }
+
+  componentDidMount () {
+    console.log('[App.js] Inside componentDidMount()');
+  }
+
+  // state = {                                         //state can be used inside class where we extend react component and it cannot be used inside functions
+  //   persons : [
+  //     {id: 'asd1', name: 'Cheran', age: '30'},      //id is needed to act as a key while using map function
+  //     {id: 'qwe1', name: 'Cholan', age: '28'},
+  //     {id: 'zxc1', name: 'Pandiyan', age: '26'},
+  //   ],
+  //   showPersons: true
+  // }
 
   deletePersonHandler = (index) => {
     // const persons = this.state.persons.slice();  //One way of populating the array with different array values instead of pointers
@@ -46,7 +67,7 @@ class App extends Component {
   }
 
   render() {
-
+    console.log('[App.js] Inside render()');
     let persons = null;
 
     if (this.state.showPersons){
