@@ -15,7 +15,8 @@ class App extends PureComponent {
         {id: 'qwe1', name: 'Cholan', age: '28'},
         {id: 'zxc1', name: 'Pandiyan', age: '26'},
       ],
-      showPersons: true
+      showPersons: true,
+      showPersonHandlerCount : 0
     }
     console.log('[Create App.js] Inside constructor()');
   }
@@ -61,8 +62,12 @@ class App extends PureComponent {
   }
 
   showPersonsHandler = () => {
-    this.setState({
-      showPersons : !this.state.showPersons
+    const doesShow = this.state.showPersons;
+    this.setState( (prevState, props) => {
+      return {
+        showPersons: !doesShow,
+        showPersonHandlerCount: prevState.showPersonHandlerCount + 1
+      }
     })
   }
 
