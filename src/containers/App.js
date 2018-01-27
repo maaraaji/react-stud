@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Styles from './App.css';
 
 import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
 
@@ -47,36 +48,23 @@ class App extends Component {
   render() {
 
     let persons = null;
-    const classes = []
-    let buttonClass = '';
 
     if (this.state.showPersons){
       persons = (
-        <div>
         <Persons
           persons={this.state.persons}
           clicked={this.deletePersonHandler}
           changed={this.changeNameHandler} />
-        </div>
       )
-
-      buttonClass = Styles.showPersons
-    }
-
-    if (this.state.persons.length <=2) {
-      classes.push(Styles.colorBrown);
-    }
-    if (this.state.persons.length <=1) {
-      classes.push(Styles.fontBold);
     }
 
     return (
       <div className={Styles.App}>
-        <h1>
-          ReactJS Study Guide - The descriptions are enclosed in source codes
-        </h1>
-        <p className={classes.join(' ')}>Checking Dynamic Classes</p>
-        <button className={buttonClass} onClick={this.showPersonsHandler}>TOGGLE NAME CARD</button>
+        <Cockpit
+          persons={this.state.persons}
+          showPersons={this.state.showPersons}
+          clicked={this.showPersonsHandler}
+          />
         {persons}
       </div>
     );

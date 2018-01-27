@@ -1,0 +1,34 @@
+.colorBrown {
+  color: brown;
+}
+
+.fontBold {
+  font-weight: bold;
+}
+
+.Cockpit button {
+  background-color: #c35800;
+  font-family: 'arial';
+  font-weight: bold;
+  color: white;
+  border: 1px solid #96541e;
+  padding: 10px;
+  box-shadow: 2px 2px 5px #eee;
+}
+
+.Cockpit button:hover {
+  background-color: salmon;
+  color: black;
+}
+
+.Cockpit button.showPersons {
+  background-color: #076565;
+  color: white;
+  border: none;
+}
+
+.Cockpit button.showPersons:hover {
+  background-color: #28c8c8;
+  color: black;
+  border: none;
+}
