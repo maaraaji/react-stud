@@ -14,19 +14,41 @@ class Persons extends Component {
       ],
       showPersons: true
     }
-    console.log('[Persons.js] Inside constructor()');
+    console.log('[Create Persons.js] Inside constructor()');
   }
 
   componentWillMount () {
-    console.log('[Persons.js] Inside componentWillMount()');
+    console.log('[Create Persons.js] Inside componentWillMount()');
   }
 
   componentDidMount () {
-    console.log('[Persons.js] Inside componentDidMount()');
+    console.log('[Create Persons.js] Inside componentDidMount()');
+  }
+
+  componentWillUnmount () {
+    console.log('[Create Persons.js] Inside componentWillUnmount()');
+  }
+
+  componentWillReceiveProps (nextProps) {
+    console.log(' [Update Persons.js] Inside componentWillReceiveProps()', nextProps)
+  }
+
+  shouldComponentUpdate (nextProps, nextState) {
+    console.log(' [Update Persons.js] Inside shouldComponentUpdate()', nextProps);
+    return nextProps !== this.props;
+    // return false;
+  }
+
+  componentWillUpdate (nextProps, nextState) {
+    console.log(' [Update Persons.js] Inside componentWillUpdate()', nextProps);
+  }
+
+  componentDidUpdate () {
+    console.log(' [Update Persons.js] Inside componentDidUpdate()', this.props);
   }
 
   render () {
-    console.log('[Persons.js] Inside render()');
+    console.log('[Create Persons.js] Inside render()');
     return this.props.persons.map( (p, index) => <Person
         personName={p.name}
         personAge={p.age}

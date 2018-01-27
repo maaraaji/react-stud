@@ -16,15 +16,15 @@ class App extends Component {
       ],
       showPersons: true
     }
-    console.log('[App.js] Inside constructor()');
+    console.log('[Create App.js] Inside constructor()');
   }
 
   componentWillMount () {
-    console.log('[App.js] Inside componentWillMount()');
+    console.log('[Create App.js] Inside componentWillMount()');
   }
 
   componentDidMount () {
-    console.log('[App.js] Inside componentDidMount()');
+    console.log('[Create App.js] Inside componentDidMount()');
   }
 
   // state = {                                         //state can be used inside class where we extend react component and it cannot be used inside functions
@@ -67,7 +67,7 @@ class App extends Component {
   }
 
   render() {
-    console.log('[App.js] Inside render()');
+    console.log('[Create App.js] Inside render()');
     let persons = null;
 
     if (this.state.showPersons){

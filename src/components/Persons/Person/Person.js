@@ -13,19 +13,23 @@ class Person extends Component {
       ],
       showPersons: true
     }
-    console.log('[Per.js] Inside constructor()');
+    console.log('[Create Per.js] Inside constructor()');
   }
 
   componentWillMount () {
-    console.log('[Per.js] Inside componentWillMount()');
+    console.log('[Create Per.js] Inside componentWillMount()');
   }
 
   componentDidMount () {
-    console.log('[Per.js] Inside componentDidMount()');
+    console.log('[Create Per.js] Inside componentDidMount()');
+  }
+
+  componentWillUnmount () {
+    console.log('[Create Per.js] Inside componentWillUnmount()');
   }
 
   render () {
-    console.log('[Per.js] Inside render()');
+    console.log('[Create Per.js] Inside render()');
     return <div
       className={Styles.Person}>
       <p onClick={this.props.click}>I am {this.props.personName} and I am {this.props.personAge} years old</p>
