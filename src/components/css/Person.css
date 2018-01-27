@@ -1,0 +1,11 @@
+.Person {
+  text-align: center;
+  background-color: #1a1719;
+  color: white;
+  width: 40%;
+  margin: 10px auto 10px auto;
+  border: 1px solid #000;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 16px;
+  font-family: 'SF Mono'
+}
