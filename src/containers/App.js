@@ -3,6 +3,7 @@ import Styles from './App.css';
 
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
+import WithClass from '../hoc/WithClass';
 
 class App extends PureComponent {
 
@@ -94,7 +95,7 @@ class App extends PureComponent {
     }
 
     return (
-      <div className={Styles.App}>
+      <WithClass styleClass={Styles.App}>
         <button onClick={() => this.setState({showPersons: true})}>Show Persons</button>
         <Cockpit
           persons={this.state.persons}
@@ -102,7 +103,7 @@ class App extends PureComponent {
           clicked={this.showPersonsHandler}
           />
         {persons}
-      </div>
+      </WithClass>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('header', {className: 'App-header'}, React.createElement('img', {src:logo, className: 'App-logo'}), React.createElement('h1', {className: 'App-title'}, 'Welcome to React')), React.createElement('p', {className: 'App-intro'}, 'To get started, edit', React.createElement('code', null, ' src/App.js'), ' and save to reload. - This is the Second method.'))
   }

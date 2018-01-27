@@ -19,8 +19,8 @@ const cockpit = (props) => {
   }
 
   return (
-    // <div className={Styles.Cockpit}>     //Instead of using Div (Wrapping enclosing tag) use Aux HOC if you are using React 16
-      <Aux>                                 //If you are using React 16.2 no need to use Aux by defining Aus HOC component instead React does the job so simple enclose with <></>
+    // <div className={Styles.Cockpit}>     //Instead of using Div (Wrapping enclosing tag) use Aux HOC if you are using React 16. If you are using React 16.2 no need to use Aux by defining Aus HOC component instead React does the job so simple enclose with <></>
+      <Aux>
         <h1>
           ReactJS Study Guide - The descriptions are enclosed in source codes
           </h1>
