@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from '../css/Person.css';
+import Styles from './Person.css';
 
 const person = (props) => {
   return (

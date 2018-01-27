@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Styles from './App.css';
 
-import Person from './components/js/Person';
+import Persons from '../components/Persons/Persons';
 
 class App extends Component {
 
@@ -53,15 +53,10 @@ class App extends Component {
     if (this.state.showPersons){
       persons = (
         <div>
-          {this.state.persons.map( (person, index) => {
-            return <Person
-              personName={person.name}
-              personAge={person.age}
-              key={person.id}
-              click={() => this.deletePersonHandler (index)}
-              changeName={(event) => this.changeNameHandler (event, person.id)}
-              />
-          })}
+        <Persons
+          persons={this.state.persons}
+          clicked={this.deletePersonHandler}
+          changed={this.changeNameHandler} />
         </div>
       )
 
@@ -81,7 +76,7 @@ class App extends Component {
           ReactJS Study Guide - The descriptions are enclosed in source codes
         </h1>
         <p className={classes.join(' ')}>Checking Dynamic Classes</p>
-        <button className={buttonClass} onClick={this.showPersonsHandler}>SHOW NAME CARD</button>
+        <button className={buttonClass} onClick={this.showPersonsHandler}>TOGGLE NAME CARD</button>
         {persons}
       </div>
     );
